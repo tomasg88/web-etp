@@ -4,7 +4,7 @@ import {Config} from 'sanity'
 
 export const config = {
   apiVersion: '2021-10-21',
-  basePath: '/admin',
+  basePath: process.env.NEXT_PUBLIC_SANITY_BASE_PATH,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
   plugins: [deskTool()],
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
