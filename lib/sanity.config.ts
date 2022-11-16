@@ -1,0 +1,15 @@
+import { deskTool } from 'sanity/desk';
+import { freeResources } from './schemas/free-resources';
+import {Config} from 'sanity'
+
+export const config = {
+  apiVersion: '2021-10-21',
+  basePath: '/admin',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
+  plugins: [deskTool()],
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
+  schema: {
+    types: [freeResources],
+  },
+  title: 'Admin - Enciende tu Poder',
+} as Config;
