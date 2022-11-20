@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
-import Navigation from '../navigation/Navigation';
+import Header from '../header/Header';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -13,9 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </Head>
 
       <main>
-        <header>
-          <Navigation />
-        </header>
+        <Header />
         {children}
       </main>
       <footer>
