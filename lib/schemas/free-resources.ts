@@ -25,11 +25,23 @@ export const freeResources = defineType({
       type: 'string',
     }),
     defineField({
-      description: 'Con esto podemos hacer que el recurso NO APAREZCA',
+      description: 'Permite mostrar u ocultar el recurso en la página. Si está desactivado, el mismo no se mostrará',
       initialValue: false,
       name: 'active',
       title: 'Visible',
       type: 'boolean',
+    }),
+    defineField({
+      description: 'La imagen que se usará para mostrar en el sitio',
+      name: 'cover',
+      title: 'Portada',
+      type: 'image',
+    }),
+    defineField({
+      description: 'Texto que aparecerá en el botón de descarga del recurso',
+      name: 'ctaButton',
+      title: 'Botón (CTA)',
+      type: 'string',
     }),
   ],
 });
