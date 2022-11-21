@@ -1,43 +1,19 @@
-import React, { MouseEventHandler, useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
-
-const RESOURCES = [
-  {
-    href: 'https://mailchi.mp/a35325185ff2/ebook-todo-sobre-sahumo',
-    id: 1,
-    text: 'Ebook Todo Sobre Sahumo',
-  },
-  {
-    href: 'https://ladiesbrunch.co/nota/conecta-con-la-gratitud',
-    id: 2,
-    text: 'Guía emprendé con la mejor energía',
-  },
-  {
-    href: 'https://ladiesbrunch.co/nota/conecta-con-la-gratitud',
-    id: 3,
-    text: 'Guía Reiki al Planeta',
-  },
-];
+import { getDownloadQuery } from '../../lib/queries';
+import useDownloadsPage from './hooks/useDownloadsPage';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
 
+export async function getDownloads() {
+  const results = await getDownloadQuery();
+  return results;
+}
+
 export default function DownloadsPage() {
-  // mapear click de botones con el slide y detener el carrousel
-  // mapear flechas izquierda y derecha para pasar de slide
-  const [activeResource, setActiveResource] = useState<number>(RESOURCES[0].id);
-
-  const handleClick = useCallback(
-    (event: React.SyntheticEvent<HTMLButtonElement>) => {
-      if (!(event.target instanceof HTMLButtonElement)) {
-        return;
-      }
-      setActiveResource(Number(event.target.dataset['id']));
-    },
-    [setActiveResource]
-  );
-
+  const { activeResource, downloads, handleClick } = useDownloadsPage();
   return (
     <section className="bg-gray-100">
       <div id="hero" className="flex flex-col items-center pt-20">
@@ -56,22 +32,24 @@ export default function DownloadsPage() {
           </span>
         </div>
         <div id="buttons" className="space-x-4 my-16  ">
-          {RESOURCES.map(({ id, text }) => (
-            <button
-              className={clsx(
-                'border-2 border-purple-400 px-8 py-2 rounded-full',
-                `${activeResource === id ? ACTIVE_BUTTON_CSS : INACTIVE_BUTTON_CSS}`
-              )}
-              data-id={id}
-              key={text}
-              onClick={handleClick}
-            >
-              {text}
-            </button>
-          ))}
+          {downloads?.length &&
+            downloads.map(({ _id, name }) => (
+              <button
+                className={clsx(
+                  'border-2 border-purple-400 px-8 py-2 rounded-full',
+                  `${activeResource === _id ? ACTIVE_BUTTON_CSS : INACTIVE_BUTTON_CSS}`
+                )}
+                data-id={_id}
+                key={_id}
+                onClick={handleClick}
+              >
+                {name}
+              </button>
+            ))}
         </div>
       </div>
       {/* Carrousel */}
+
       <div>
         {/* barra de duración del slide */}
         {/* flechas anteriorn y siguiente */}
