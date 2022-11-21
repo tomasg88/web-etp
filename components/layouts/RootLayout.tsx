@@ -1,9 +1,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { ReactNode } from 'react';
 import Header from '../header/Header';
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+const ADMIN_ROUTE = '/admin';
+
+export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
+  const { pathname } = useRouter();
+  const isCMSView = pathname.includes(ADMIN_ROUTE);
+
+  if (isCMSView) return <>{children}</>;
+
   return (
     <>
       <Head>
@@ -16,6 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         {children}
       </main>
+
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
