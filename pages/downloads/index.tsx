@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { getDownloadQuery } from '../../lib/queries';
-import useDownloadsPage from './hooks/useDownloadsPage';
+import { useDownloadsPage } from '../../hooks/useDownloadsPage';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
