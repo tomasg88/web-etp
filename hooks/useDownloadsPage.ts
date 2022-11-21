@@ -1,9 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
 import { getDownloads } from "../pages/downloads";
 
+export type FreeResource = {
+  _id: string,
+  name: string,
+  description: string,
+  ctaButton: string,
+  link: string
+}
+
 export const useDownloadsPage = () => {
-  const [activeResource, setActiveResource] = useState<string>();
-  const [downloads, setDownloads] = useState([]);
+  const [downloads, setDownloads] = useState<FreeResource[]>([]);
+  const [activeDownload, setActiveDownload] = useState<FreeResource | undefined>(downloads[0]);
 
   useEffect(() => {
     getDownloads().then((downloads) => setDownloads(downloads));
@@ -14,10 +22,14 @@ export const useDownloadsPage = () => {
       if (!(event.target instanceof HTMLButtonElement)) {
         return;
       }
-      setActiveResource(event.target.dataset['id']);
+      const dataId = event.target.dataset['id'];
+      if (!dataId) return;
+
+      const selected = downloads.find((value) => value._id === dataId)
+      setActiveDownload(selected);
     },
-    [setActiveResource]
+    [downloads, setActiveDownload]
   );
 
-  return { activeResource, downloads, handleClick }
+  return { activeDownload, downloads, handleClick }
 }

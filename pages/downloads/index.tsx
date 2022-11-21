@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { getDownloadQuery } from '../../lib/queries';
-import { useDownloadsPage } from '../../hooks/useDownloadsPage';
+import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
@@ -13,7 +13,8 @@ export async function getDownloads() {
 }
 
 export default function DownloadsPage() {
-  const { activeResource, downloads, handleClick } = useDownloadsPage();
+  const { activeDownload, downloads, handleClick } = useDownloadsPage();
+
   return (
     <section className="bg-gray-100">
       <div id="hero" className="flex flex-col items-center pt-20">
@@ -37,7 +38,7 @@ export default function DownloadsPage() {
               <button
                 className={clsx(
                   'border-2 border-purple-400 px-8 py-2 rounded-full',
-                  `${activeResource === _id ? ACTIVE_BUTTON_CSS : INACTIVE_BUTTON_CSS}`
+                  `${activeDownload?._id === _id ? ACTIVE_BUTTON_CSS : INACTIVE_BUTTON_CSS}`
                 )}
                 data-id={_id}
                 key={_id}
@@ -50,10 +51,20 @@ export default function DownloadsPage() {
       </div>
       {/* Carrousel */}
 
-      <div>
+      <div className="bg-white px-28 py-32 flex justify-between items-start text-gray-800 2xl:max-w-7xl w-full">
         {/* barra de duración del slide */}
         {/* flechas anteriorn y siguiente */}
         {/* detalles del recurso */}
+        {activeDownload && (
+          <>
+            <div className="flex flex-col items-start justify-evenly">
+              <h2>{activeDownload.name}</h2>
+              <p>{activeDownload.description}</p>
+              <button>{activeDownload.ctaButton}</button>
+            </div>
+            <div>imagen</div>
+          </>
+        )}
       </div>
     </section>
   );
