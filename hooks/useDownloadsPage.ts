@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import { getDownloads } from "../pages/downloads";
 
 export type FreeResource = {
   _id: string,
@@ -9,13 +8,8 @@ export type FreeResource = {
   link: string
 }
 
-export const useDownloadsPage = () => {
-  const [downloads, setDownloads] = useState<FreeResource[]>([]);
-  const [activeDownload, setActiveDownload] = useState<FreeResource | undefined>();
-
-  useEffect(() => {
-    getDownloads().then((downloads) => setDownloads(downloads));
-  }, []);
+export const useDownloadsPage = ({ downloads }: {downloads: FreeResource[]}) => {
+  const [activeDownload, setActiveDownload] = useState<FreeResource>(downloads[0]);
 
   useEffect(() => {
     if (downloads.length) setActiveDownload(downloads[0])
@@ -31,10 +25,12 @@ export const useDownloadsPage = () => {
       if (!dataId) return;
 
       const selected = downloads.find((value) => value._id === dataId)
+      if (!selected) return;
+
       setActiveDownload(selected);
     },
     [downloads, setActiveDownload]
   );
 
-  return { activeDownload, downloads, handleClick }
+  return { activeDownload, handleClick }
 }

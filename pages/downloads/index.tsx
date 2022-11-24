@@ -1,23 +1,18 @@
 import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
-import { getDownloadQuery } from '../../lib/queries';
+import { getDownloads } from '../../lib/queries';
 import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
 
-export async function getDownloads() {
-  const results = await getDownloadQuery();
-  return results;
-}
-
-export default function DownloadsPage() {
-  const { activeDownload, downloads, handleClick } = useDownloadsPage();
+export default function DownloadsPage({ downloads }: { downloads: FreeResource[] }) {
+  const { activeDownload, handleClick } = useDownloadsPage({ downloads });
 
   return (
-    <section className="bg-gray-100">
-      <div id="hero" className="flex flex-col items-center pt-20">
+    <section>
+      <div id="hero" className="bg-gray-100 flex flex-col items-center pt-20">
         <div id="dibujo" className="relative w-full h-full flex items-center justify-center mt-20">
           <h1 className="absolute text-gold-600 z-10 text-[96px] font-playfair">
             Recursos gratuitos
@@ -51,15 +46,15 @@ export default function DownloadsPage() {
       </div>
       {/* Carrousel */}
 
-      <div className="bg-white px-28 py-32 flex justify-between items-start text-gray-800 2xl:max-w-7xl w-full">
+      <div className="bg-white px-28 py-32 flex justify-between mx-auto items-start text-gray-800 2xl:max-w-7xl w-full">
         {/* barra de duración del slide */}
         {/* flechas anteriorn y siguiente */}
         {/* detalles del recurso */}
         {activeDownload && (
           <>
-            <div className="flex flex-col items-start justify-evenly">
-              <h2>{activeDownload.name}</h2>
-              <p>{activeDownload.description}</p>
+            <div className="w-[430px]">
+              <h2 className="font-playfair text-5xl w-96 text-gray-800">{activeDownload.name}</h2>
+              <p className="text-base text-gray-800 opacity-80">{activeDownload.description}</p>
               <button>{activeDownload.ctaButton}</button>
             </div>
             <div>imagen</div>
@@ -68,4 +63,9 @@ export default function DownloadsPage() {
       </div>
     </section>
   );
+}
+
+export async function getStaticProps() {
+  const downloads = await getDownloads();
+  return { props: { downloads } };
 }
