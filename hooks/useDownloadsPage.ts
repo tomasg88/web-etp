@@ -11,11 +11,16 @@ export type FreeResource = {
 
 export const useDownloadsPage = () => {
   const [downloads, setDownloads] = useState<FreeResource[]>([]);
-  const [activeDownload, setActiveDownload] = useState<FreeResource | undefined>(downloads[0]);
+  const [activeDownload, setActiveDownload] = useState<FreeResource | undefined>();
 
   useEffect(() => {
     getDownloads().then((downloads) => setDownloads(downloads));
   }, []);
+
+  useEffect(() => {
+    if (downloads.length) setActiveDownload(downloads[0])
+  }, [downloads, setActiveDownload])
+  
 
   const handleClick = useCallback(
     (event: React.SyntheticEvent<HTMLButtonElement>) => {
