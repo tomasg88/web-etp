@@ -44,8 +44,8 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
             ))}
         </div>
       </div>
-      {/* Carrousel */}
 
+      {/* Carrousel */}
       <div className="bg-white px-28 py-32 flex justify-between mx-auto items-start text-gray-800 2xl:max-w-7xl w-full">
         {/* barra de duración del slide */}
         {/* flechas anteriorn y siguiente */}
@@ -54,8 +54,10 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
           <>
             <div className="w-[430px]">
               <h2 className="font-playfair text-5xl w-96 text-gray-800">{activeDownload.name}</h2>
-              <p className="text-base text-gray-800 opacity-80">{activeDownload.description}</p>
-              <button>{activeDownload.ctaButton}</button>
+              <p className="text-base text-gray-800 opacity-80 text-justify mt-8">
+                {activeDownload.description}
+              </p>
+              <button className="mt-16 bg-gold-400 rounded-lg text-white py-3 px-6">{`${activeDownload.ctaButton} >`}</button>
             </div>
             <div>imagen</div>
           </>
