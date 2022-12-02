@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@sanity/types": "^2.35.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
     "postcss": "^8.4.19",
