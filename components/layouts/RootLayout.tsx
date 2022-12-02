@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Header from '../header/Header';
 
 const ADMIN_ROUTE = '/admin';
 
-export default function RootLayout({ children }: { children: ReactNode }): ReactNode {
+export default function RootLayout({ children }: { children: JSX.Element }): JSX.Element {
   const { pathname } = useRouter();
   const isCMSView = pathname.includes(ADMIN_ROUTE);
 
