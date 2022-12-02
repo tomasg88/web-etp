@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export type FreeResource = {
   _id: string,
+  cover: any,
   name: string,
   description: string,
   ctaButton: string,

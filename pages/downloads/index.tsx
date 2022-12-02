@@ -1,14 +1,19 @@
 import React, { useMemo } from 'react';
 import clsx from 'clsx';
-import Image from 'next/image';
+import Img from 'next/image';
 import { getDownloads } from '../../lib/queries';
 import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
+import { useNextSanityImage } from 'next-sanity-image';
+import { client } from '../../lib/sanity.config';
+import { getClient } from '../../lib/sanity.server';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
 
 export default function DownloadsPage({ downloads }: { downloads: FreeResource[] }) {
   const { activeDownload, handleClick } = useDownloadsPage({ downloads });
+
+  const imageProps = useNextSanityImage(getClient(), activeDownload.cover);
 
   return (
     <section>
@@ -18,7 +23,7 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
             Recursos gratuitos
           </h1>
           <span className="flex items-center justify-center bg-white h-[475px] w-[475px] rounded-full">
-            <Image
+            <Img
               className="relative bottom-6 right-4"
               src={'/shiny-diamond.png'}
               alt={'diamante brillante'}
@@ -59,7 +64,14 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
               </p>
               <button className="mt-16 bg-gold-400 rounded-lg text-white py-3 px-6">{`${activeDownload.ctaButton} >`}</button>
             </div>
-            <div>imagen</div>
+            <div>
+              <Img
+                {...imageProps}
+                alt={activeDownload.name || ' '}
+                layout="responsive"
+                sizes="(max-width: 320px) 100vw, 480px"
+              />
+            </div>
           </>
         )}
       </div>

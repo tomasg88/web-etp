@@ -1,6 +1,7 @@
 import { deskTool } from 'sanity/desk';
 import { freeResources } from './schemas/free-resources';
 import {Config} from 'sanity'
+import { createClient } from 'next-sanity';
 
 export const config = {
   apiVersion: '2021-10-21',
@@ -20,3 +21,5 @@ export const clientConfig = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   useCdn: true
 }
+
+export const client = createClient(clientConfig);
