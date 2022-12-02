@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import clsx from 'clsx';
-import Img from 'next/image';
+import Image from 'next/image';
 import { getDownloads } from '../../lib/queries';
 import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
 import { useNextSanityImage } from 'next-sanity-image';
@@ -22,7 +22,7 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
             Recursos gratuitos
           </h1>
           <span className="flex items-center justify-center bg-white h-[475px] w-[475px] rounded-full">
-            <Img
+            <Image
               className="relative bottom-6 right-4"
               src={'/shiny-diamond.png'}
               alt={'diamante brillante'}
@@ -64,7 +64,7 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
               <button className="mt-16 bg-gold-400 rounded-lg text-white py-3 px-6">{`${activeDownload.ctaButton} >`}</button>
             </div>
             <div>
-              <Img
+              <Image
                 {...imageProps}
                 alt={activeDownload.name || ' '}
                 layout="responsive"
