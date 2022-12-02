@@ -75,6 +75,11 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
                   <ButtonArrows />
                 </span>
               </button>
+              <div className="mt-8">
+                <p className={`${crimson.className} text-base opacity-40`}>
+                  *Completá con tus datos y recibilo directamente en tu correo!
+                </p>
+              </div>
             </div>
             <div>
               <Image
