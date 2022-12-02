@@ -5,7 +5,8 @@ import { getDownloads } from '../../lib/queries';
 import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
 import { useNextSanityImage } from 'next-sanity-image';
 import { getClient } from '../../lib/sanity.server';
-import { crimson, playfair } from '../../utils/fonts';
+import { crimson, playfair, proximaNova } from '../../utils/fonts';
+import { ButtonArrows } from '../../components/icons/ButtonArrows';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
@@ -66,7 +67,14 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
               >
                 {activeDownload.description}
               </p>
-              <button className="mt-16 bg-gold-400 rounded-lg text-white py-3 px-6">{`${activeDownload.ctaButton} >`}</button>
+              <button
+                className={`${proximaNova.className} flex items-center mt-16 bg-gold-400 rounded-lg text-white py-4 px-6`}
+              >
+                {`${activeDownload.ctaButton}`}
+                <span className="ml-3">
+                  <ButtonArrows />
+                </span>
+              </button>
             </div>
             <div>
               <Image
