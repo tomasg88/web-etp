@@ -4,7 +4,6 @@ import Img from 'next/image';
 import { getDownloads } from '../../lib/queries';
 import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
 import { useNextSanityImage } from 'next-sanity-image';
-import { client } from '../../lib/sanity.config';
 import { getClient } from '../../lib/sanity.server';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
