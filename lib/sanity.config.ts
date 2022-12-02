@@ -1,7 +1,6 @@
 import { deskTool } from 'sanity/desk';
 import { freeResources } from './schemas/free-resources';
 import {Config} from 'sanity'
-import { createClient } from 'next-sanity';
 
 export const config = {
   apiVersion: '2021-10-21',
