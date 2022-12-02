@@ -38,17 +38,17 @@ module.exports = {
           400: '#FCD3C1',
         },
       },
-      fontFamily: {
-        montserrat: ['Montserrat'],
-        playfair: ['Playfair'],
-        'proxima-nova': ['"Proxima Nova"'],
-      },
       keyframes: {
         'pulse-completely': {
           '0%, 100%': { opacity: 1 },
           '50%': { opacity: 0 },
         },
       },
+    },
+    fontFamily: {
+      'crimson-pro': ['var(--font-crimson-pro)'],
+      'playfair-display': ['var(--font-playfair-display)'],
+      'proxima-nova': ['var(--font-proxima-nova)'],
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],

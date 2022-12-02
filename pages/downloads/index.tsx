@@ -5,8 +5,8 @@ import { getDownloads } from '../../lib/queries';
 import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
 import { useNextSanityImage } from 'next-sanity-image';
 import { getClient } from '../../lib/sanity.server';
-import { crimson, playfair, proximaNova } from '../../utils/fonts';
-import { ButtonArrows } from '../../components/icons/ButtonArrows';
+import { crimsonPro, playfairDisplay, proximaNova } from '../../utils/fonts';
+import { DownloadButton } from '../../components/buttons/DownloadButton';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
@@ -20,7 +20,9 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
     <section>
       <div id="hero" className="bg-gray-100 flex flex-col items-center pt-20">
         <div id="dibujo" className="relative w-full h-full flex items-center justify-center mt-20">
-          <h1 className="absolute text-gold-600 z-10 text-[96px] font-playfair">
+          <h1
+            className={`${playfairDisplay.variable} font-playfair-display absolute text-gold-600 z-10 text-[96px] font-playfair`}
+          >
             Recursos gratuitos
           </h1>
           <span className="flex items-center justify-center bg-white h-[475px] w-[475px] rounded-full">
@@ -38,7 +40,7 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
             downloads.map(({ _id, name }) => (
               <button
                 className={clsx(
-                  'border-2 border-purple-400 px-8 py-2 rounded-full',
+                  `${proximaNova.variable} font-proxima-nova border-2 border-purple-400 px-8 py-2 rounded-full`,
                   `${activeDownload?._id === _id ? ACTIVE_BUTTON_CSS : INACTIVE_BUTTON_CSS}`
                 )}
                 data-id={_id}
@@ -59,24 +61,21 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
         {activeDownload && (
           <>
             <div className="w-[430px]">
-              <h2 className={`${playfair.className} text-5xl text-gray-800`}>
+              <h2
+                className={`${playfairDisplay.variable} font-playfair-display text-5xl text-gray-800`}
+              >
                 {activeDownload.name}
               </h2>
               <p
-                className={`${crimson.className} text-base text-gray-800 opacity-80 text-justify mt-8`}
+                className={`${crimsonPro.variable} font-crimson-pro text-base text-gray-800 opacity-80 text-justify mt-8`}
               >
                 {activeDownload.description}
               </p>
-              <button
-                className={`${proximaNova.className} flex items-center mt-16 bg-gold-400 rounded-lg text-white py-4 px-6`}
-              >
-                {`${activeDownload.ctaButton}`}
-                <span className="ml-3">
-                  <ButtonArrows />
-                </span>
-              </button>
+              <div className="mt-16">
+                <DownloadButton text={activeDownload.ctaButton} />
+              </div>
               <div className="mt-8">
-                <p className={`${crimson.className} text-base opacity-40`}>
+                <p className={`${crimsonPro.variable} font-crimson-pro text-base opacity-40`}>
                   *Completá con tus datos y recibilo directamente en tu correo!
                 </p>
               </div>

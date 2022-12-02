@@ -5,14 +5,14 @@ export const billionReach = localFont({
   src: '../public/fonts/Billion-Reach.otf'
 });
 
-export const crimson = Crimson_Pro({
+export const crimsonPro = Crimson_Pro({
   subsets: ['latin'],
-  weight: ['400'],
+  variable: '--font-crimson-pro',
 });
 
-export const playfair = Playfair_Display({
+export const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400'],
+  variable: '--font-playfair-display',
 });
 
 export const proximaNova = localFont({
@@ -33,5 +33,6 @@ export const proximaNova = localFont({
       path: '../public/fonts/Proxima-Nova-Regular.otf',
       weight: '400',
     },
-  ]
+  ],
+  variable: '--font-proxima-nova'
 })
