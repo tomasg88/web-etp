@@ -21,5 +21,3 @@ export const clientConfig = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   useCdn: true
 }
-
-export const client = createClient(clientConfig);
