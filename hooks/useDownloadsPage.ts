@@ -1,8 +1,9 @@
+import { ImageUrlParams } from "@sanity/types";
 import { useCallback, useEffect, useState } from "react";
 
 export type FreeResource = {
   _id: string,
-  cover: any,
+  cover: ImageUrlParams,
   name: string,
   description: string,
   ctaButton: string,
