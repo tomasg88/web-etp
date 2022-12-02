@@ -18,8 +18,8 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
 
   return (
     <section>
-      <div id="hero" className="bg-gray-100 flex flex-col items-center pt-20">
-        <div id="dibujo" className="relative w-full h-full flex items-center justify-center mt-20">
+      <div className="bg-gray-100 flex flex-col items-center pt-20" id="hero">
+        <div className="relative w-full h-full flex items-center justify-center mt-20" id="dibujo">
           <h1
             className={`${playfairDisplay.variable} font-playfair-display absolute text-gold-600 z-10 text-[96px] font-playfair`}
           >
@@ -27,15 +27,15 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
           </h1>
           <span className="flex items-center justify-center bg-white h-[475px] w-[475px] rounded-full">
             <Image
+              alt="diamante brillante"
               className="relative bottom-6 right-4"
-              src={'/shiny-diamond.png'}
-              alt={'diamante brillante'}
-              width={226}
               height={304}
+              src="/shiny-diamond.png"
+              width={226}
             />
           </span>
         </div>
-        <div id="buttons" className="space-x-4 my-16  ">
+        <div className="space-x-4 my-16  " id="buttons">
           {downloads?.length &&
             downloads.map(({ _id, name }) => (
               <button
