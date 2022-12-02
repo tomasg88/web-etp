@@ -25,7 +25,7 @@ const PAGES = [
 export default function Navigation() {
   const router = useRouter();
   return (
-    <nav className="space-x-8">
+    <nav className="space-x-12">
       {PAGES.map(({ href, title }) => (
         <Link
           className={clsx('tracking-wide text-purple-400 pb-2 font-medium', {

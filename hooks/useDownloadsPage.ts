@@ -1,23 +1,38 @@
+import { ImageUrlParams } from "@sanity/types";
 import { useCallback, useEffect, useState } from "react";
-import { getDownloads } from "../pages/downloads";
 
-export const useDownloadsPage = () => {
-  const [activeResource, setActiveResource] = useState<string>();
-  const [downloads, setDownloads] = useState([]);
+export type FreeResource = {
+  _id: string,
+  cover: ImageUrlParams,
+  name: string,
+  description: string,
+  ctaButton: string,
+  link: string
+}
+
+export const useDownloadsPage = ({ downloads }: {downloads: FreeResource[]}) => {
+  const [activeDownload, setActiveDownload] = useState<FreeResource>(downloads[0]);
 
   useEffect(() => {
-    getDownloads().then((downloads) => setDownloads(downloads));
-  }, []);
+    if (downloads.length) setActiveDownload(downloads[0])
+  }, [downloads, setActiveDownload])
+  
 
   const handleClick = useCallback(
     (event: React.SyntheticEvent<HTMLButtonElement>) => {
       if (!(event.target instanceof HTMLButtonElement)) {
         return;
       }
-      setActiveResource(event.target.dataset['id']);
+      const dataId = event.target.dataset['id'];
+      if (!dataId) return;
+
+      const selected = downloads.find((value) => value._id === dataId)
+      if (!selected) return;
+
+      setActiveDownload(selected);
     },
-    [setActiveResource]
+    [downloads, setActiveDownload]
   );
 
-  return { activeResource, downloads, handleClick }
+  return { activeDownload, handleClick }
 }
