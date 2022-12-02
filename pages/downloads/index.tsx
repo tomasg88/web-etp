@@ -5,6 +5,7 @@ import { getDownloads } from '../../lib/queries';
 import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
 import { useNextSanityImage } from 'next-sanity-image';
 import { getClient } from '../../lib/sanity.server';
+import { crimson, playfair } from '../../utils/fonts';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
@@ -57,8 +58,12 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
         {activeDownload && (
           <>
             <div className="w-[430px]">
-              <h2 className="font-playfair text-5xl w-96 text-gray-800">{activeDownload.name}</h2>
-              <p className="text-base text-gray-800 opacity-80 text-justify mt-8">
+              <h2 className={`${playfair.className} text-5xl text-gray-800`}>
+                {activeDownload.name}
+              </h2>
+              <p
+                className={`${crimson.className} text-base text-gray-800 opacity-80 text-justify mt-8`}
+              >
                 {activeDownload.description}
               </p>
               <button className="mt-16 bg-gold-400 rounded-lg text-white py-3 px-6">{`${activeDownload.ctaButton} >`}</button>
