@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         gray: {
+          100: '#F8F8F8',
           800: '#2E3439',
         },
         gold: {
@@ -16,9 +17,6 @@ module.exports = {
           400: '#C8AC86',
           500: '#C9AD87',
           600: '#9B8054',
-        },
-        gray: {
-          100: '#F8F8F8',
         },
         orange: {
           400: '#F7966B',
@@ -40,11 +38,6 @@ module.exports = {
           400: '#FCD3C1',
         },
       },
-      fontFamily: {
-        montserrat: ['Montserrat'],
-        playfair: ['Playfair'],
-        'proxima-nova': ['"Proxima Nova"'],
-      },
       keyframes: {
         'pulse-completely': {
           '0%, 100%': { opacity: 1 },
@@ -52,6 +45,11 @@ module.exports = {
         },
       },
     },
+    fontFamily: {
+      'crimson-pro': ['var(--font-crimson-pro)'],
+      'playfair-display': ['var(--font-playfair-display)'],
+      'proxima-nova': ['var(--font-proxima-nova)'],
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
