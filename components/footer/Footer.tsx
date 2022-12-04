@@ -13,15 +13,16 @@ export const Footer = () => {
           <Image alt="Enciende Tu Poder" height={100} src="/footer-logo.png" width={200} />
         </div>
         {/* Site Map */}
-        <ul
-          className={`flex justify-around ml-12 space-x-8 text-pink-400 font-semibold font-proxima-nova ${proximaNova.variable}`}
-        >
-          {PAGES.map(({ href, title }) => (
-            <li key={href}>
-              <Link href={href}>{title}</Link>
-            </li>
-          ))}
-        </ul>
+
+        {PAGES.map(({ href, title }) => (
+          <Link
+            className={`flex justify-around ml-12 space-x-8 text-pink-400 font-semibold font-proxima-nova ${proximaNova.variable}`}
+            href={href}
+            key={href}
+          >
+            {title}
+          </Link>
+        ))}
       </div>
       <div className="flex items-center text-right">{/* RRSS */}</div>
     </footer>
