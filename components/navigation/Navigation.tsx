@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { proximaNova } from '../../utils/fonts';
 
-const PAGES = [
+export const PAGES = [
   {
     href: '/about',
     title: 'ABOUT',
