@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { proximaNova } from '../../utils/fonts';
 
 const PAGES = [
   {
@@ -28,9 +29,12 @@ export default function Navigation() {
     <nav className="space-x-12">
       {PAGES.map(({ href, title }) => (
         <Link
-          className={clsx('tracking-wide text-purple-400 pb-2 font-medium', {
-            'border-b-2 border-purple-400': router.pathname === href,
-          })}
+          className={clsx(
+            `${proximaNova.variable} font-proxima-nova tracking-wide text-purple-400 pb-2 font-semibold`,
+            {
+              'border-b-2 border-purple-400 font-extrabold': router.pathname === href,
+            }
+          )}
           href={href}
           key={href}
         >

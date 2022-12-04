@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: JSX.Element }): JSX
         <link href="/favicon.ico" rel="icon" />
       </Head>
 
-      <main>
+      <main className="antialiased">
         <Header />
         {children}
       </main>
