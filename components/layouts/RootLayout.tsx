@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { Footer } from '../footer/Footer';
 import Header from '../header/Header';
 
 const ADMIN_ROUTE = '/admin';
@@ -19,12 +20,14 @@ export default function RootLayout({ children }: { children: JSX.Element }): JSX
         <link href="/favicon.ico" rel="icon" />
       </Head>
 
-      <main>
+      <main className="antialiased">
         <Header />
         {children}
       </main>
 
-      <footer></footer>
+      <div className="bg-purple-400">
+        <Footer />
+      </div>
     </>
   );
 }
