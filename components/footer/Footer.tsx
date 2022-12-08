@@ -3,6 +3,11 @@ import Link from 'next/link';
 import React from 'react';
 import { proximaNova } from '../../utils/fonts';
 import { PAGES } from '../navigation/Navigation';
+import EmailIcon from '../icons/social/EmailIcon';
+import YoutubeIcon from '../icons/social/YoutubeIcon';
+import SpotifyIcon from '../icons/social/SpotifyIcon';
+import FacebookIcon from '../icons/social/FacebookIcon';
+import InstagramIcon from '../icons/social/InstagramIcon';
 
 export const Footer = () => {
   return (
@@ -26,7 +31,33 @@ export const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex items-center text-right">{/* RRSS */}</div>
+      <div className="flex items-center text-right space-x-2">
+        <Link href="">
+          <span className="bg-pink-400 w-8 h-8 rounded-full flex justify-center items-center">
+            <EmailIcon />
+          </span>
+        </Link>
+        <Link href="">
+          <span className="bg-pink-400 w-8 h-8 rounded-full flex justify-center items-center">
+            <YoutubeIcon />
+          </span>
+        </Link>
+        <Link href="">
+          <span className="bg-pink-400 w-8 h-8 rounded-full flex justify-center items-center">
+            <SpotifyIcon />
+          </span>
+        </Link>
+        <Link href="">
+          <span className="bg-pink-400 w-8 h-8 rounded-full flex justify-center items-center">
+            <FacebookIcon />
+          </span>
+        </Link>
+        <Link href="">
+          <span className="bg-pink-400 w-8 h-8 rounded-full flex justify-center items-center">
+            <InstagramIcon />
+          </span>
+        </Link>
+      </div>
     </footer>
   );
 };
