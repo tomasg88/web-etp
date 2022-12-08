@@ -25,7 +25,9 @@ export default function RootLayout({ children }: { children: JSX.Element }): JSX
         {children}
       </main>
 
-      <Footer />
+      <div className="bg-purple-400">
+        <Footer />
+      </div>
     </>
   );
 }
