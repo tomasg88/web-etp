@@ -34,7 +34,7 @@ const SOCIAL_LINKS = [
 
 export const Footer = () => {
   return (
-    <footer className="flex justify-between items-center px-20 py-12 2xl:max-w-7xl w-full mx-auto right-0 left-0">
+    <footer className="flex justify-between items-center px-20 py-12 w-full mx-auto right-0 left-0">
       <div className="flex items-center">
         <div>
           <Image alt="Enciende Tu Poder" height={10} src="/footer-logo.png" width={200} />
@@ -53,7 +53,7 @@ export const Footer = () => {
       </div>
       <div className="flex items-center text-right space-x-2">
         <p className={`${playfairDisplay.variable} mr-2 font-playfair-display text-pink-400`}>
-          Nuestras redes:
+          Seguinos en nuestras redes:
         </p>
         {SOCIAL_LINKS.map(({ href, icon }, index) => (
           <Link href={href} key={index}>
