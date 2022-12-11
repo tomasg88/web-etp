@@ -1,6 +1,10 @@
 import { deskTool } from 'sanity/desk';
-import { freeResources } from './schemas/free-resources';
 import {Config} from 'sanity'
+import { freeResources } from './schemas/free-resources';
+import { pages } from './schemas/pages';
+import { sections } from './schemas/sections';
+import { layout } from './schemas/custom-fields/layout';
+import { texts } from './schemas/texts';
 
 export const config = {
   apiVersion: '2021-10-21',
@@ -9,7 +13,15 @@ export const config = {
   plugins: [deskTool()],
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
   schema: {
-    types: [freeResources],
+    types: [
+      // FIELDS
+      layout,
+      // DOCUMENTS
+      pages,
+      sections,
+      texts,
+      freeResources
+    ],
   },
   title: 'Admin - Enciende tu Poder',
 } as Config;
