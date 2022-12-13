@@ -5,6 +5,7 @@ import { pages } from './schemas/pages';
 import { sections } from './schemas/sections';
 import { layout } from './schemas/custom-fields/layout';
 import { texts } from './schemas/texts';
+import { blockContent } from './schemas/custom-fields/block';
 
 export const config = {
   apiVersion: '2021-10-21',
@@ -15,6 +16,7 @@ export const config = {
   schema: {
     types: [
       // FIELDS
+      blockContent,
       layout,
       // DOCUMENTS
       pages,
