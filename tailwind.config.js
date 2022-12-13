@@ -35,6 +35,7 @@ module.exports = {
           400: '#FCD3C1',
         },
         skin: {
+          200: '#FFE6CB',
           400: '#FCD3C1',
         },
       },
