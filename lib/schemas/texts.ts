@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
-import { DESCRIPTION_MESSAGES } from "../messages";
+import { defineField, defineType } from 'sanity';
+import { DESCRIPTION_MESSAGES } from '../messages';
 
 export const texts = defineType({
   description: DESCRIPTION_MESSAGES.texts.document,
@@ -11,7 +11,7 @@ export const texts = defineType({
       name: 'sentence',
       title: 'Oración / Frase',
       type: 'array',
-      of: [{ type: 'block' }]
-    })
-  ]
-})
+      of: [{ type: 'block' }],
+    }),
+  ],
+});

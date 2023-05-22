@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity';
 
 // In this field type we should just have the list of different UI designs.
 export const layout = defineType({
@@ -10,6 +10,6 @@ export const layout = defineType({
       name: 'design',
       title: 'Título',
       type: 'string',
-    })
-  ]
-})
+    }),
+  ],
+});

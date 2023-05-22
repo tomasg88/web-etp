@@ -26,13 +26,14 @@ export const PAGES = [
 export default function Navigation() {
   const router = useRouter();
   return (
-    <nav className="space-x-12">
+    <nav className='space-x-12'>
       {PAGES.map(({ href, title }) => (
         <Link
           className={clsx(
             `${proximaNova.variable} font-proxima-nova tracking-wide text-purple-400 pb-2 font-semibold`,
             {
-              'border-b-2 border-purple-400 font-extrabold': router.pathname === href,
+              'border-b-2 border-purple-400 font-extrabold':
+                router.pathname === href,
             }
           )}
           href={href}

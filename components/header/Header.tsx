@@ -4,12 +4,12 @@ import Navigation from '../navigation/Navigation';
 
 const Header = () => {
   return (
-    <header className="absolute flex justify-between items-center px-20 h-28  w-full mx-auto right-0 left-0">
-      <div className="block h-20 w-56">
+    <header className='absolute flex justify-between items-center px-20 h-28  w-full mx-auto right-0 left-0'>
+      <div className='block h-20 w-56'>
         <Image
-          alt="Enciende Tu Poder"
+          alt='Enciende Tu Poder'
           height={80}
-          src="/Enciende-Logo-Horizontal.png"
+          src='/Enciende-Logo-Horizontal.png'
           width={230}
         />
       </div>

@@ -1,5 +1,5 @@
 import { deskTool } from 'sanity/desk';
-import {Config} from 'sanity'
+import { Config } from 'sanity';
 import { freeResources } from './schemas/free-resources';
 import { pages } from './schemas/pages';
 import { sections } from './schemas/sections';
@@ -22,7 +22,7 @@ export const config = {
       pages,
       sections,
       texts,
-      freeResources
+      freeResources,
     ],
   },
   title: 'Admin - Enciende tu Poder',
@@ -32,5 +32,5 @@ export const clientConfig = {
   apiVersion: '2021-10-21',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  useCdn: true
-}
+  useCdn: true,
+};
