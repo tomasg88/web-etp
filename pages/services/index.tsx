@@ -92,7 +92,7 @@ export default function ServicesPage() {
         </div>
       </SectionContainer>
 
-      <div className="bg-gradient-to-b from-white to-skin-200 h-10 block"></div>
+      <div className="bg-gradient-to-b from-white to-skin-200 h-28 block"></div>
       <SectionContainer
         backgroundClassNames="bg-skin-200"
         className="px-32 py-20"
@@ -102,14 +102,73 @@ export default function ServicesPage() {
         >
           Al reservar tu sesión
         </h2>
-        <p
-          className={`${playfairDisplay.className} ml-20 w-[420px] mt-10 text-2xl leading-8 text-gray-800`}
-        >
-          Recibirás por Whatsapp música y un video con recomendaciones para
-          preparar tu espacio para la sesión y que la puedas aprovechar al
-          máximo.
-        </p>
+        <div className="flex justify-between">
+          <p
+            className={`${playfairDisplay.variable} inline-block font-playfair-display ml-20 w-[420px] mt-10 text-2xl leading-8 text-gray-800`}
+          >
+            Recibirás por Whatsapp música y un video con recomendaciones para
+            preparar tu espacio para la sesión y que la puedas aprovechar al
+            máximo.
+          </p>
+          <Image
+            alt="consultorio"
+            className="relative bottom-12"
+            height={330}
+            src="/consultorio.png"
+            width={500}
+          />
+        </div>
       </SectionContainer>
+
+      <SectionContainer
+        backgroundClassNames="bg-skin-200"
+        className="px-32 py-20"
+      >
+        <div
+          className="text-center mx-auto"
+          style={{
+            backgroundImage: 'url(./rama.png)',
+            backgroundRepeat: 'no-repeat',
+            backgroundOrigin: 'padding-box',
+            backgroundPositionX: '1000px',
+            backgroundPositionY: '-100px',
+          }}
+        >
+          <h2
+            className={`${playfairDisplay.variable} font-playfair-display text-purple-400 text-6xl leading-[106.8%] text-center mb-4`}
+          >
+            Al finalizar la sesión
+          </h2>
+          <span
+            className={`${playfairDisplay.variable} font-playfair-display text-xl text-gray-800`}
+          >
+            Te envío por Whatsapp:
+          </span>
+          <div
+            className="flex items-center justify-center w-16 h-16 mx-auto mt-12"
+            style={{
+              backgroundImage: 'url(./step-background.png)',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          >
+            <p
+              className={`${playfairDisplay.variable} font-playfair-display text-6xl text-gray-800`}
+            >
+              1
+            </p>
+          </div>
+          <p
+            className={`${playfairDisplay.variable} font-playfair-display text-4xl text-gray-800 mx-auto mt-12 w-[550px]`}
+          >
+            La foto de la{' '}
+            <span className="text-purple-400">Carta del Oráculo</span> de
+            Iluminación que saqué para vos con un mensaje del Universo para este
+            momento presente.
+          </p>
+        </div>
+      </SectionContainer>
+      <div className="bg-gradient-to-t from-white to-skin-200 h-28 block"></div>
     </>
   );
 }
