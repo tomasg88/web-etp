@@ -26,7 +26,7 @@ export const PAGES = [
 export default function Navigation() {
   const router = useRouter();
   return (
-    <nav className='space-x-12'>
+    <nav className="space-x-12">
       {PAGES.map(({ href, title }) => (
         <Link
           className={clsx(
@@ -34,7 +34,7 @@ export default function Navigation() {
             {
               'border-b-2 border-purple-400 font-extrabold':
                 router.pathname === href,
-            }
+            },
           )}
           href={href}
           key={href}

@@ -22,27 +22,27 @@ export default function DownloadsPage({
 
   return (
     <section>
-      <div className='bg-gray-100 flex flex-col items-center pt-20' id='hero'>
+      <div className="bg-gray-100 flex flex-col items-center pt-20" id="hero">
         <div
-          className='relative w-full h-full flex items-center justify-center mt-20'
-          id='dibujo'
+          className="relative w-full h-full flex items-center justify-center mt-20"
+          id="dibujo"
         >
           <h1
             className={`${playfairDisplay.variable} font-playfair-display absolute text-gold-600 z-10 text-[96px] font-playfair`}
           >
             Recursos gratuitos
           </h1>
-          <span className='flex items-center justify-center bg-white h-[475px] w-[475px] rounded-full'>
+          <span className="flex items-center justify-center bg-white h-[475px] w-[475px] rounded-full">
             <Image
-              alt='diamante brillante'
-              className='relative bottom-6 right-4'
+              alt="diamante brillante"
+              className="relative bottom-6 right-4"
               height={304}
-              src='/shiny-diamond.png'
+              src="/shiny-diamond.png"
               width={226}
             />
           </span>
         </div>
-        <div className='space-x-4 my-16  ' id='buttons'>
+        <div className="space-x-4 my-16  " id="buttons">
           {downloads?.length &&
             downloads.map(({ _id, name }) => (
               <button
@@ -52,7 +52,7 @@ export default function DownloadsPage({
                     activeDownload?._id === _id
                       ? ACTIVE_BUTTON_CSS
                       : INACTIVE_BUTTON_CSS
-                  }`
+                  }`,
                 )}
                 data-id={_id}
                 key={_id}
@@ -65,13 +65,13 @@ export default function DownloadsPage({
       </div>
 
       {/* Carrousel */}
-      <div className='bg-white px-28 py-32 flex justify-between mx-auto items-start text-gray-800 2xl:max-w-7xl w-full'>
+      <div className="bg-white px-28 py-32 flex justify-between mx-auto items-start text-gray-800 2xl:max-w-7xl w-full">
         {/* barra de duración del slide */}
         {/* flechas anteriorn y siguiente */}
         {/* detalles del recurso */}
         {activeDownload && (
           <>
-            <div className='w-[430px]'>
+            <div className="w-[430px]">
               <h2
                 className={`${playfairDisplay.variable} font-playfair-display text-5xl text-gray-800`}
               >
@@ -82,10 +82,10 @@ export default function DownloadsPage({
               >
                 {activeDownload.description}
               </p>
-              <div className='mt-16'>
+              <div className="mt-16">
                 <DownloadButton text={activeDownload.ctaButton} />
               </div>
-              <div className='mt-8'>
+              <div className="mt-8">
                 <p
                   className={`${crimsonPro.variable} font-crimson-pro text-base opacity-40`}
                 >
@@ -97,8 +97,8 @@ export default function DownloadsPage({
               <Image
                 {...imageProps}
                 alt={activeDownload.name || ' '}
-                layout='responsive'
-                sizes='(max-width: 320px) 100vw, 480px'
+                layout="responsive"
+                sizes="(max-width: 320px) 100vw, 480px"
               />
             </div>
           </>
