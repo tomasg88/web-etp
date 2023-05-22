@@ -69,10 +69,22 @@ export default function ServicesPage() {
             className={`${playfairDisplay.variable} font-playfair-display text-gold-600 text-4xl leading-[60px] text-center`}
           >
             La sesión es 100% a distancia{' '}
-            <span className="border-2 rounded-full border-gold-600">sin videollamada</span>
+            <span className="border-2 rounded-full border-gold-600 inline-block px-5 mx-2">sin videollamada</span>
             con cita previa y dura 1 hora aprox.
           </h3>
         </div>
+      </SectionContainer>
+
+      <div className="bg-gradient-to-b from-white to-skin-200 h-10 block"></div>
+      <SectionContainer backgroundClassNames='bg-skin-200' className="px-32 py-20">
+        <h2
+          className={`${playfairDisplay.variable} font-playfair-display text-gold-600 text-6xl leading-[106.8%] w-96`}
+        >
+          Al reservar tu sesión
+        </h2>
+        <p className={`${playfairDisplay.className} ml-20 w-[420px] mt-10 text-2xl leading-8 text-gray-800`}>
+          Recibirás por Whatsapp música y un video con recomendaciones para preparar tu espacio para la sesión y que la puedas aprovechar al máximo.
+        </p>
       </SectionContainer>
     </>
   );
