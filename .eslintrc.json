@@ -1,5 +1,10 @@
 {
-  "extends": ["next/core-web-vitals"],
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
   "rules": {
     "@next/next/no-img-element": "warn",
     "no-unused-vars": "error",
