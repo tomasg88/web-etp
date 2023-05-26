@@ -92,10 +92,10 @@ export default function ServicesPage() {
         </div>
       </SectionContainer>
 
-      <div className="bg-gradient-to-b from-white to-skin-200 h-28 block"></div>
+      <div className="bg-gradient-to-b from-salmon-300 to-skin-200 opacity-40 h-28 block"></div>
       <SectionContainer
-        backgroundClassNames="bg-skin-200"
-        className="px-32 py-20"
+        backgroundClassNames="bg-skin-200 bg-opacity-40"
+        className="px-32 pt-20"
       >
         <h2
           className={`${playfairDisplay.variable} font-playfair-display text-gold-600 text-6xl leading-[106.8%] w-96`}
@@ -120,20 +120,18 @@ export default function ServicesPage() {
         </div>
       </SectionContainer>
 
+      {/* After session */}
       <SectionContainer
-        backgroundClassNames="bg-skin-200"
-        className="px-32 py-20"
+        backgroundClassNames="bg-skin-200 bg-opacity-40"
+        className="px-32 pb-20 pt-40"
+        style={{
+          backgroundImage: 'url(./rama.png)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPositionX: '1150px',
+          backgroundPositionY: '10px',
+        }}
       >
-        <div
-          className="text-center mx-auto"
-          style={{
-            backgroundImage: 'url(./rama.png)',
-            backgroundRepeat: 'no-repeat',
-            backgroundOrigin: 'padding-box',
-            backgroundPositionX: '1000px',
-            backgroundPositionY: '-100px',
-          }}
-        >
+        <div className="text-center mx-auto">
           <h2
             className={`${playfairDisplay.variable} font-playfair-display text-purple-400 text-6xl leading-[106.8%] text-center mb-4`}
           >
@@ -168,7 +166,42 @@ export default function ServicesPage() {
           </p>
         </div>
       </SectionContainer>
-      <div className="bg-gradient-to-t from-white to-skin-200 h-28 block"></div>
+      <div className="bg-gradient-to-t from-salmon-300 to-skin-200 opacity-40 h-28 block"></div>
+
+      {/* Discount section */}
+      <SectionContainer
+        className="py-24 text-center"
+        style={{
+          backgroundImage: 'url(./estrellas.png)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPositionX: 100,
+          backgroundPositionY: 50,
+        }}
+      >
+        <div
+          className={`${playfairDisplay.variable} font-playfair-display flex items-center justify-evenly w-[700px] mx-auto h-[500px]`}
+          style={{
+            backgroundImage: 'url(./vector-13.png)',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          }}
+        >
+          <p className="uppercase text-purple-400 text-3xl leading-8">
+            Pack de <span className="text-gold-500 text-4xl">3</span> sesiones
+          </p>
+          <p className="text-gold-500 text-[280px] px-16 inline-block pb-28">
+            15
+          </p>
+          <p className="uppercase text-purple-400 text-3xl leading-8 text-left">
+            de descuento
+          </p>
+        </div>
+        <p
+          className={`${crimsonPro.variable} font-crimson-pro opacity-40 leading-6`}
+        >
+          *Son transferibles y tenés 2 meses para usarlas.
+        </p>
+      </SectionContainer>
     </>
   );
 }
