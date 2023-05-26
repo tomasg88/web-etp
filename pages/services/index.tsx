@@ -3,9 +3,13 @@ import React from 'react';
 import { SectionContainer } from '../../components/section/SectionContainer';
 import { crimsonPro, playfairDisplay, proximaNova } from '../../utils/fonts';
 
+const TEXT_OPINION =
+  '“Llegué a cande por recomendación de una amiga. La contacté para que nos acompañara con sesiones de reiki a distancia para mi suegro que estaba en terapia intensiva por un cuadro de covid grave...';
+
 export default function ServicesPage() {
   return (
     <>
+      {/* Hero */}
       <SectionContainer
         backgroundClassNames="bg-skin-200 bg-opacity-40"
         className="flex items-center justify-center"
@@ -201,6 +205,99 @@ export default function ServicesPage() {
         >
           *Son transferibles y tenés 2 meses para usarlas.
         </p>
+      </SectionContainer>
+
+      {/* Payments section */}
+      <SectionContainer className="py-20 mx-auto flex justify-center text-center items-center">
+        <Image alt="estrella" height={70} src="/estrella.png" width={70} />
+        <div className="border-[11px] border-white border-opacity-10 rounded-3xl bg-purple-300 w-[800px] px-24 py-10 mx-20">
+          <p
+            className={`${playfairDisplay.variable} font-playfair-display text-white leading-6 text-2xl mb-8`}
+          >
+            Formas de pago:
+          </p>
+          <div className="flex justify-evenly">
+            <div className="bg-white bg-opacity-10 p-6 rounded-3xl">
+              <Image
+                alt="MercadoPago"
+                height={76}
+                src="/mercadopago.png"
+                width={82}
+              />
+            </div>
+            <div className="bg-white bg-opacity-10 p-6 rounded-3xl">
+              <Image
+                alt="MercadoPago"
+                height={76}
+                src="/mercadopago.png"
+                width={82}
+              />
+            </div>
+            <div className="bg-white bg-opacity-10 p-6 rounded-3xl">
+              <Image
+                alt="PayPal"
+                height={76}
+                src="/mercadopago.png"
+                width={82}
+              />
+            </div>
+          </div>
+        </div>
+        <Image alt="estrella" height={70} src="/estrella.png" width={70} />
+      </SectionContainer>
+
+      {/* Comments / Opinions */}
+      <SectionContainer
+        className={`${playfairDisplay.variable} font-playfair-display py-20 px-32 mx-auto flex flex-col text-purple-400`}
+      >
+        <div className="flex items-center justify-center mb-12">
+          <Image alt="estrella" height={30} src="/estrella.png" width={30} />
+          <h2 className="text-purple-400 text-7xl leading-[68px] mx-6 pb-4">
+            Testimonios
+          </h2>
+          <Image alt="estrella" height={30} src="/estrella.png" width={30} />
+        </div>
+        <div className="rounded-[32px] bg-skin-200 bg-opacity-40 p-20 flex justify-around">
+          {/* Paginador (numero, flechas, indicadores) */}
+          <div>
+            <div
+              className="border border-purple-400 border-opacity-40 bg-white bg-opacity-40 text-[190px] w-64 h-72 rounded-[32px] flex items-center justify-center pb-16"
+              style={{
+                backgroundImage: 'url(/incienso.png)',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'auto',
+              }}
+            >
+              1
+            </div>
+
+            {/* flechas */}
+            <div></div>
+            {/* bolitas indicadoras */}
+            <div></div>
+          </div>
+          {/* Contenido (texto, quien, cta) */}
+          <div className="ml-20 flex-col ">
+            {/* texto */}
+            <p className=" text-4xl leading-[3rem] font-medium">
+              {TEXT_OPINION}
+            </p>
+            <div className="flex items-center justify-around mt-12">
+              {/* Usuario */}
+              <div className="w-full">
+                <p className="font-medium text-xl leading-7 mb-2">Paula</p>
+                <p className="uppercase leading-3">@paulinacocina</p>
+              </div>
+              {/* CTA */}
+              <button
+                className={`${proximaNova.variable} font-proxima-nova whitespace-nowrap text-xs border-2 rounded-md border-purple-400 bg-transparent font-bold px-6 py-2`}
+              >
+                Leer más
+              </button>
+            </div>
+          </div>
+        </div>
       </SectionContainer>
     </>
   );
