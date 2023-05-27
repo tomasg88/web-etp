@@ -7,6 +7,7 @@ const TEXT_OPINION =
   '“Llegué a cande por recomendación de una amiga. La contacté para que nos acompañara con sesiones de reiki a distancia para mi suegro que estaba en terapia intensiva por un cuadro de covid grave...';
 
 export default function ServicesPage() {
+  const isOpinionActive = true;
   return (
     <>
       {/* Hero */}
@@ -261,7 +262,7 @@ export default function ServicesPage() {
           {/* Paginador (numero, flechas, indicadores) */}
           <div>
             <div
-              className="border border-purple-400 border-opacity-40 bg-white bg-opacity-40 text-[190px] w-64 h-72 rounded-[32px] flex items-center justify-center pb-16"
+              className="border border-purple-400 border-opacity-40 bg-white bg-opacity-40 text-[190px] w-64 h-72 rounded-[32px] flex items-center justify-center pb-16 mb-12"
               style={{
                 backgroundImage: 'url(/incienso.png)',
                 backgroundPosition: 'center',
@@ -271,20 +272,32 @@ export default function ServicesPage() {
             >
               1
             </div>
-
-            {/* flechas */}
-            <div></div>
-            {/* bolitas indicadoras */}
-            <div></div>
+            <div className="flex justify-start items-center">
+              <div className="flex justify-start items-center mr-4">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full border-2 border-purple-400 mr-2">
+                  &lt;
+                </div>
+                <div className="flex items-center justify-center h-12 w-12 rounded-full border-2 border-purple-400">
+                  &gt;
+                </div>
+              </div>
+              <div className="flex justify-start items-center">
+                <div
+                  className={`h-3 w-3 rounded-full border-2 border-purple-400 mr-2 ${
+                    isOpinionActive ? 'bg-purple-400' : 'bg-transparent'
+                  }`}
+                ></div>
+                <div className="h-3 w-3 rounded-full border-2 border-purple-400 mr-2"></div>
+                <div className="h-3 w-3 rounded-full border-2 border-purple-400 mr-2"></div>
+              </div>
+            </div>
           </div>
           {/* Contenido (texto, quien, cta) */}
           <div className="ml-20 flex-col ">
-            {/* texto */}
             <p className=" text-4xl leading-[3rem] font-medium">
               {TEXT_OPINION}
             </p>
             <div className="flex items-center justify-around mt-12">
-              {/* Usuario */}
               <div className="w-full">
                 <p className="font-medium text-xl leading-7 mb-2">Paula</p>
                 <p
@@ -293,7 +306,6 @@ export default function ServicesPage() {
                   @paulinacocina
                 </p>
               </div>
-              {/* CTA */}
               <button
                 className={`${proximaNova.variable} font-proxima-nova whitespace-nowrap text-xs border-2 rounded-lg border-purple-400 bg-transparent font-bold px-5 py-3`}
               >
