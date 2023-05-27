@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       animation: {
@@ -35,6 +38,7 @@ module.exports = {
           400: '#FCD3C1',
         },
         skin: {
+          200: '#FFE6CB',
           400: '#FCD3C1',
         },
       },
@@ -44,11 +48,11 @@ module.exports = {
           '50%': { opacity: 0 },
         },
       },
-    },
-    fontFamily: {
-      'crimson-pro': ['var(--font-crimson-pro)'],
-      'playfair-display': ['var(--font-playfair-display)'],
-      'proxima-nova': ['var(--font-proxima-nova)'],
+      fontFamily: {
+        'crimson-pro': ['var(--font-crimson-pro)'],
+        'playfair-display': ['var(--font-playfair-display)'],
+        'proxima-nova': ['var(--font-proxima-nova)'],
+      },
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],

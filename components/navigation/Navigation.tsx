@@ -32,8 +32,9 @@ export default function Navigation() {
           className={clsx(
             `${proximaNova.variable} font-proxima-nova tracking-wide text-purple-400 pb-2 font-semibold`,
             {
-              'border-b-2 border-purple-400 font-extrabold': router.pathname === href,
-            }
+              'border-b-2 border-purple-400 font-extrabold':
+                router.pathname === href,
+            },
           )}
           href={href}
           key={href}

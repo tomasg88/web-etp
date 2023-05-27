@@ -11,7 +11,11 @@ import { DownloadButton } from '../../components/buttons/DownloadButton';
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
 
-export default function DownloadsPage({ downloads }: { downloads: FreeResource[] }) {
+export default function DownloadsPage({
+  downloads,
+}: {
+  downloads: FreeResource[];
+}) {
   const { activeDownload, handleClick } = useDownloadsPage({ downloads });
 
   const imageProps = useNextSanityImage(getClient(), activeDownload.cover);
@@ -19,7 +23,10 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
   return (
     <section>
       <div className="bg-gray-100 flex flex-col items-center pt-20" id="hero">
-        <div className="relative w-full h-full flex items-center justify-center mt-20" id="dibujo">
+        <div
+          className="relative w-full h-full flex items-center justify-center mt-20"
+          id="dibujo"
+        >
           <h1
             className={`${playfairDisplay.variable} font-playfair-display absolute text-gold-600 z-10 text-[96px] font-playfair`}
           >
@@ -41,7 +48,11 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
               <button
                 className={clsx(
                   `${proximaNova.variable} font-proxima-nova border-2 border-purple-400 px-8 py-2 rounded-full`,
-                  `${activeDownload?._id === _id ? ACTIVE_BUTTON_CSS : INACTIVE_BUTTON_CSS}`
+                  `${
+                    activeDownload?._id === _id
+                      ? ACTIVE_BUTTON_CSS
+                      : INACTIVE_BUTTON_CSS
+                  }`,
                 )}
                 data-id={_id}
                 key={_id}
@@ -75,7 +86,9 @@ export default function DownloadsPage({ downloads }: { downloads: FreeResource[]
                 <DownloadButton text={activeDownload.ctaButton} />
               </div>
               <div className="mt-8">
-                <p className={`${crimsonPro.variable} font-crimson-pro text-base opacity-40`}>
+                <p
+                  className={`${crimsonPro.variable} font-crimson-pro text-base opacity-40`}
+                >
                   *Completá con tus datos y recibilo directamente en tu correo!
                 </p>
               </div>

@@ -1,8 +1,8 @@
 import { Crimson_Pro, Playfair_Display } from '@next/font/google';
-import localFont from '@next/font/local'
+import localFont from '@next/font/local';
 
 export const billionReach = localFont({
-  src: '../public/fonts/Billion-Reach.otf'
+  src: '../public/fonts/Billion-Reach.otf',
 });
 
 export const crimsonPro = Crimson_Pro({
@@ -34,5 +34,5 @@ export const proximaNova = localFont({
       weight: '400',
     },
   ],
-  variable: '--font-proxima-nova'
-})
+  variable: '--font-proxima-nova',
+});

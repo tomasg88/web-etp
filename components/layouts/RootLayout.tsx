@@ -6,7 +6,11 @@ import Header from '../header/Header';
 
 const ADMIN_ROUTE = '/admin';
 
-export default function RootLayout({ children }: { children: JSX.Element }): JSX.Element {
+export default function RootLayout({
+  children,
+}: {
+  children: JSX.Element;
+}): JSX.Element {
   const { pathname } = useRouter();
   const isCMSView = pathname.includes(ADMIN_ROUTE);
 

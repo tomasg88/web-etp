@@ -1,6 +1,11 @@
 import { deskTool } from 'sanity/desk';
+import { Config } from 'sanity';
 import { freeResources } from './schemas/free-resources';
-import {Config} from 'sanity'
+import { pages } from './schemas/pages';
+import { sections } from './schemas/sections';
+import { layout } from './schemas/custom-fields/layout';
+import { texts } from './schemas/texts';
+import { blockContent } from './schemas/custom-fields/block';
 
 export const config = {
   apiVersion: '2021-10-21',
@@ -9,7 +14,16 @@ export const config = {
   plugins: [deskTool()],
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
   schema: {
-    types: [freeResources],
+    types: [
+      // FIELDS
+      blockContent,
+      layout,
+      // DOCUMENTS
+      pages,
+      sections,
+      texts,
+      freeResources,
+    ],
   },
   title: 'Admin - Enciende tu Poder',
 } as Config;
@@ -18,5 +32,5 @@ export const clientConfig = {
   apiVersion: '2021-10-21',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  useCdn: true
-}
+  useCdn: true,
+};
