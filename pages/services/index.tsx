@@ -287,13 +287,20 @@ export default function ServicesPage() {
               {/* Usuario */}
               <div className="w-full">
                 <p className="font-medium text-xl leading-7 mb-2">Paula</p>
-                <p className="uppercase leading-3">@paulinacocina</p>
+                <p
+                  className={`${proximaNova.variable} font-proxima-nova uppercase leading-3 font-bold text-xs tracking-[0.14em] opacity-60`}
+                >
+                  @paulinacocina
+                </p>
               </div>
               {/* CTA */}
               <button
-                className={`${proximaNova.variable} font-proxima-nova whitespace-nowrap text-xs border-2 rounded-md border-purple-400 bg-transparent font-bold px-6 py-2`}
+                className={`${proximaNova.variable} font-proxima-nova whitespace-nowrap text-xs border-2 rounded-lg border-purple-400 bg-transparent font-bold px-5 py-3`}
               >
-                Leer más
+                Leer más{' '}
+                <span className="border-2 border-purple-400 rounded-full ml-2 px-1">
+                  +
+                </span>
               </button>
             </div>
           </div>
