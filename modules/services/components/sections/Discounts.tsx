@@ -24,9 +24,7 @@ export default function DiscountsSection() {
         <p className="uppercase text-purple-400 text-3xl leading-8">
           Pack de <span className="text-gold-500 text-4xl">3</span> sesiones
         </p>
-        <p className="text-gold-500 text-[280px] px-16 inline-block pb-28">
-          15
-        </p>
+        <p className="text-gold-500 text-[200px] px-16 pb-28">15</p>
         <p className="uppercase text-purple-400 text-3xl leading-8 text-left">
           de descuento
         </p>
