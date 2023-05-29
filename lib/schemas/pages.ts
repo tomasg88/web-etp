@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { DESCRIPTION_MESSAGES, ERROR_MESSAGES } from '../messages';
+import { DESCRIPTION_MESSAGES, ERROR_MESSAGES } from 'lib/messages';
 
 export const pages = defineType({
   description: DESCRIPTION_MESSAGES.pages.document,

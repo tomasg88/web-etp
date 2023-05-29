@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Footer } from '../footer/Footer';
-import Header from '../header/Header';
+import { Footer } from 'components/footer/Footer';
+import Header from 'components/header/Header';
 
 const ADMIN_ROUTE = '/admin';
 

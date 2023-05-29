@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { playfairDisplay, proximaNova } from '../../utils/fonts';
-import { PAGES } from '../navigation/Navigation';
-import EmailIcon from '../icons/social/EmailIcon';
-import YoutubeIcon from '../icons/social/YoutubeIcon';
-import SpotifyIcon from '../icons/social/SpotifyIcon';
-import FacebookIcon from '../icons/social/FacebookIcon';
-import InstagramIcon from '../icons/social/InstagramIcon';
+import { playfairDisplay, proximaNova } from 'utils/fonts';
+import { PAGES } from 'components/navigation/Navigation';
+import EmailIcon from 'components/icons/social/EmailIcon';
+import YoutubeIcon from 'components/icons/social/YoutubeIcon';
+import SpotifyIcon from 'components/icons/social/SpotifyIcon';
+import FacebookIcon from 'components/icons/social/FacebookIcon';
+import InstagramIcon from 'components/icons/social/InstagramIcon';
 
 const SOCIAL_LINKS = [
   {

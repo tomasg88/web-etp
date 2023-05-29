@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import { SectionContainer } from '../../../../components/section/SectionContainer';
-import { playfairDisplay, proximaNova } from '../../../../utils/fonts';
+import { SectionContainer } from 'components/section/SectionContainer';
+import { playfairDisplay, proximaNova } from 'utils/fonts';
 
 const IS_OPINION_ACTIVE = true;
 const TEXT_OPINION =

@@ -1,11 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import { SectionContainer } from '../../../../components/section/SectionContainer';
-import {
-  crimsonPro,
-  playfairDisplay,
-  proximaNova,
-} from '../../../../utils/fonts';
+import { SectionContainer } from 'components/section/SectionContainer';
+import { crimsonPro, playfairDisplay, proximaNova } from 'utils/fonts';
 
 export default function ServicesHero() {
   return (

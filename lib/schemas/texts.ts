@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { DESCRIPTION_MESSAGES } from '../messages';
+import { DESCRIPTION_MESSAGES } from 'lib/messages';
 
 export const texts = defineType({
   description: DESCRIPTION_MESSAGES.texts.document,

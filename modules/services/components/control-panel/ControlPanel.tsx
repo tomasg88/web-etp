@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { proximaNova } from '../../../../utils/fonts';
+import { proximaNova } from 'utils/fonts';
 
 const COMMON_TEXT_CSS = 'text-sm tracking-widest leading-3 font-semibold';
 const IS_ACTIVE_CSS = 'border-b-2 border-purple-400 text-purple-400 font-bold';

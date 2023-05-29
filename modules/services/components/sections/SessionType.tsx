@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import { SectionContainer } from '../../../../components/section/SectionContainer';
-import { playfairDisplay } from '../../../../utils/fonts';
+import { SectionContainer } from 'components/section/SectionContainer';
+import { playfairDisplay } from 'utils/fonts';
 
 export default function SessionTypeSection() {
   return (

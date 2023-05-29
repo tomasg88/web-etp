@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { DESCRIPTION_MESSAGES, ERROR_MESSAGES } from '../messages';
+import { DESCRIPTION_MESSAGES, ERROR_MESSAGES } from 'lib/messages';
 
 // Each one of these documents type shouls reflect a section
 export const sections = defineType({

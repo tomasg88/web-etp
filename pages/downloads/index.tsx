@@ -1,12 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
-import { getDownloads } from '../../lib/queries';
-import { FreeResource, useDownloadsPage } from '../../hooks/useDownloadsPage';
+import { getDownloads } from 'lib/queries';
+import { FreeResource, useDownloadsPage } from 'hooks/useDownloadsPage';
 import { useNextSanityImage } from 'next-sanity-image';
-import { getClient } from '../../lib/sanity.server';
-import { crimsonPro, playfairDisplay, proximaNova } from '../../utils/fonts';
-import { DownloadButton } from '../../components/buttons/DownloadButton';
+import { getClient } from 'lib/sanity.server';
+import { crimsonPro, playfairDisplay, proximaNova } from 'utils/fonts';
+import { DownloadButton } from 'components/buttons/DownloadButton';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';

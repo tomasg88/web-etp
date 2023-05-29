@@ -1,6 +1,6 @@
 import React from 'react';
-import { proximaNova } from '../../utils/fonts';
-import { ButtonArrows } from '../icons/ButtonArrows';
+import { proximaNova } from 'utils/fonts';
+import { ButtonArrows } from 'components/icons/ButtonArrows';
 
 interface DownloadButtonProps {
   text: string;

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { proximaNova } from '../../utils/fonts';
+import { proximaNova } from 'utils/fonts';
 
 export const PAGES = [
   {

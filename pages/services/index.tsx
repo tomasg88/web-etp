@@ -1,13 +1,13 @@
 import React from 'react';
-import ControlPanel from '../../modules/services/components/control-panel/ControlPanel';
-import ServicesHero from '../../modules/services/components/hero/ServicesHero';
-import AfterSessionSection from '../../modules/services/components/sections/AfterSession';
-import DiscountsSection from '../../modules/services/components/sections/Discounts';
-import PaymentsSection from '../../modules/services/components/sections/Payments';
-import ReviewsSection from '../../modules/services/components/sections/Reviews';
-import SessionInfoSection from '../../modules/services/components/sections/SessionInfo';
-import SessionPreparationSection from '../../modules/services/components/sections/SessionPreparation';
-import SessionTypeSection from '../../modules/services/components/sections/SessionType';
+import ControlPanel from 'modules/services/components/control-panel/ControlPanel';
+import ServicesHero from 'modules/services/components/hero/ServicesHero';
+import AfterSessionSection from 'modules/services/components/sections/AfterSession';
+import DiscountsSection from 'modules/services/components/sections/Discounts';
+import PaymentsSection from 'modules/services/components/sections/Payments';
+import ReviewsSection from 'modules/services/components/sections/Reviews';
+import SessionInfoSection from 'modules/services/components/sections/SessionInfo';
+import SessionPreparationSection from 'modules/services/components/sections/SessionPreparation';
+import SessionTypeSection from 'modules/services/components/sections/SessionType';
 
 export default function ServicesPage() {
   return (

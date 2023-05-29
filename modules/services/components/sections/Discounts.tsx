@@ -1,6 +1,6 @@
 import React from 'react';
-import { SectionContainer } from '../../../../components/section/SectionContainer';
-import { crimsonPro, playfairDisplay } from '../../../../utils/fonts';
+import { SectionContainer } from 'components/section/SectionContainer';
+import { crimsonPro, playfairDisplay } from 'utils/fonts';
 
 export default function DiscountsSection() {
   return (
