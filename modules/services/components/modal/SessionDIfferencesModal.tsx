@@ -2,7 +2,6 @@ import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import CloseIcon from 'components/icons/close/Close';
 import { playfairDisplay } from 'utils/fonts';
-import styles from './SessionDifferencesModal.module.scss';
 
 const SessionDifferencesModal = () => (
   <Dialog.Root>
@@ -21,7 +20,7 @@ const SessionDifferencesModal = () => (
           backgroundPosition: 'center',
         }}
       >
-        <div className={styles.background}>
+        <div>
           <Dialog.Title className="text-purple-400 text-xs tracking-[0.14em] leading-3 font-bold text-center mb-16">
             DIFERENCIA
           </Dialog.Title>
