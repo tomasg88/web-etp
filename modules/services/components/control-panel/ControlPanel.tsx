@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { proximaNova } from 'utils/fonts';
+import SessionDifferencesModal from 'modules/services/components/modal/SessionDIfferencesModal';
 
 const COMMON_TEXT_CSS = 'text-sm tracking-widest leading-3 font-semibold';
 const IS_ACTIVE_CSS = 'border-b-2 border-purple-400 text-purple-400 font-bold';
@@ -46,7 +47,7 @@ export default function ControlPanel(): JSX.Element {
             A DISTANCIA
           </button>
           <div className={`${IS_INACTIVE_CSS} ${COMMON_TEXT_CSS} py-8`}>
-            DIFERENCIA
+            <SessionDifferencesModal />
           </div>
         </div>
         <div className="w-2 h-2 rotate-45 bg-gold-400 block mx-6"></div>
