@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { proximaNova } from '../../../../utils/fonts';
 
 const COMMON_TEXT_CSS = 'text-sm tracking-widest leading-3 font-semibold';
-
-const IS_ACTIVE_CSS = 'border-b-4 border-purple-400 text-purple-400 font-bold';
+const IS_ACTIVE_CSS = 'border-b-2 border-purple-400 text-purple-400 font-bold';
 const IS_INACTIVE_CSS = 'text-purple-400 opacity-60';
 
 enum SESSION_TYPE {
@@ -20,7 +19,7 @@ export default function ControlPanel(): JSX.Element {
   const handleRemoteClick = () => setSelectedType(SESSION_TYPE.REMOTE);
   return (
     // Wrapper
-    <div className="fixed w-full bottom-20 flex justify-center">
+    <div className="fixed w-full bottom-12 flex justify-center">
       <div
         className={`${proximaNova.variable} font-proxima-nova rounded-3xl bg-salmon-300 mx-auto border border-purple-400 border-opacity-10 flex items-center px-6 py-3`}
         style={{ boxShadow: '-24px 28px 53px rgba(60, 40, 11, 0.08)' }}
