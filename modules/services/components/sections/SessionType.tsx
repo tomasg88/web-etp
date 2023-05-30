@@ -5,7 +5,7 @@ import { playfairDisplay } from 'utils/fonts';
 
 export default function SessionTypeSection() {
   return (
-    <SectionContainer className="flex justify-between items-center px-32 py-28">
+    <SectionContainer className="flex justify-between items-center px-32 2xl:px-0 py-28">
       <div className="w-1/2 space-y-16">
         <h2
           className={`${playfairDisplay.variable} font-playfair-display text-gold-600 text-6xl leading-[106.8%]`}

@@ -7,7 +7,7 @@ export default function SessionPreparationSection() {
   return (
     <SectionContainer
       backgroundClassNames="bg-skin-200 bg-opacity-40"
-      className="px-32 pt-20"
+      className="px-32 2xl:px-0 pt-20"
     >
       <h2
         className={`${playfairDisplay.variable} font-playfair-display text-gold-600 text-6xl leading-[106.8%] w-96`}

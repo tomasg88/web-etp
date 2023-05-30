@@ -5,7 +5,7 @@ import { playfairDisplay } from 'utils/fonts';
 
 export default function SessionInfoSection() {
   return (
-    <SectionContainer className="flex justify-between px-32 py-28 pt-8">
+    <SectionContainer className="flex justify-between px-32 2xl:px-0 py-28 pt-8">
       <div className="ml-32">
         <Image
           alt="figura estrellas"

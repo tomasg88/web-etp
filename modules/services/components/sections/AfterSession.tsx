@@ -24,7 +24,7 @@ export default function AfterSessionSection() {
   return (
     <SectionContainer
       backgroundClassNames="bg-skin-200 bg-opacity-40"
-      className="px-32 pb-20 pt-40"
+      className="px-32 2xl:px-0 pb-20 pt-40"
       style={{
         backgroundImage: 'url(./rama.png)',
         backgroundRepeat: 'no-repeat',

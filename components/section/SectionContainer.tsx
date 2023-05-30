@@ -16,7 +16,7 @@ export const SectionContainer = ({
   return (
     <section className={backgroundClassNames}>
       <div
-        className={`w-full 2xl:max-w-7xl mx-auto ${className}`}
+        className={`w-full 2xl:max-w-6xl mx-auto ${className}`}
         style={style}
       >
         {children}

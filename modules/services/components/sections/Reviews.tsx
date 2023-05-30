@@ -10,7 +10,7 @@ const TEXT_OPINION =
 export default function ReviewsSection() {
   return (
     <SectionContainer
-      className={`${playfairDisplay.variable} font-playfair-display py-20 px-32 mx-auto flex flex-col text-purple-400`}
+      className={`${playfairDisplay.variable} font-playfair-display py-20 2xl:px-0 px-32 mx-auto flex flex-col text-purple-400`}
     >
       <div className="flex items-center justify-center mb-12">
         <Image alt="estrella" height={30} src="/estrella.png" width={30} />
