@@ -2,6 +2,24 @@ import React from 'react';
 import { SectionContainer } from 'components/section/SectionContainer';
 import { playfairDisplay } from 'utils/fonts';
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mousewheel, Navigation } from 'swiper';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const AfterSessionOne = () => (
+  <p
+    className={`${playfairDisplay.variable} font-playfair-display text-4xl text-gray-800 mx-auto mt-12 w-[550px]`}
+  >
+    La foto de la{' '}
+    <span className="text-purple-400">Carta del Oráculo de Iluminación</span>{' '}
+    que saqué para vos con un mensaje del Universo para este momento presente.
+  </p>
+);
+
 export default function AfterSessionSection() {
   return (
     <SectionContainer
@@ -25,30 +43,41 @@ export default function AfterSessionSection() {
         >
           Te envío por Whatsapp:
         </span>
-        <div
-          className="flex items-center justify-center w-16 h-16 mx-auto mt-12"
-          style={{
-            backgroundImage: 'url(./step-background.png)',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
+        <Swiper
+          centeredSlides={true}
+          direction="horizontal"
+          loop={true}
+          modules={[Mousewheel, Navigation]}
+          mousewheel={{
+            forceToAxis: true,
+            sensitivity: 0.01,
+            thresholdDelta: 10,
+            releaseOnEdges: true,
           }}
+          navigation={true}
+          slidesPerView={1}
+          spaceBetween={50}
         >
-          <p
-            className={`${playfairDisplay.variable} font-playfair-display text-7xl text-gray-800`}
-          >
-            1
-          </p>
-        </div>
-        <p
-          className={`${playfairDisplay.variable} font-playfair-display text-4xl text-gray-800 mx-auto mt-12 w-[550px]`}
-        >
-          La foto de la{' '}
-          <span className="text-purple-400">
-            Carta del Oráculo de Iluminación
-          </span>{' '}
-          que saqué para vos con un mensaje del Universo para este momento
-          presente.
-        </p>
+          {[AfterSessionOne, AfterSessionOne].map((component, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="flex items-center justify-center w-16 h-16 mx-auto mt-12"
+                style={{
+                  backgroundImage: 'url(./step-background.png)',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'cover',
+                }}
+              >
+                <p
+                  className={`${playfairDisplay.variable} font-playfair-display text-7xl text-gray-800`}
+                >
+                  {index + 1}
+                </p>
+              </div>
+              <AfterSessionOne />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </SectionContainer>
   );
