@@ -11,9 +11,9 @@ const SessionDifferencesModal = () => (
       </button>
     </Dialog.Trigger>
     <Dialog.Portal>
-      <Dialog.Overlay className="bg-black opacity-80 animate-overlay-show fixed inset-0" />
+      <Dialog.Overlay className="bg-black opacity-80 animate-overlay-show fixed inset-0 z-10" />
       <Dialog.Content
-        className="animate-content-show fixed top-[50%] left-[50%] max-h-[85vh] w-full max-w-[1000px] translate-x-[-50%] translate-y-[-50%] rounded-[32px] bg-skin-200 py-12 px-20 focus:outline-none"
+        className="animate-content-show fixed top-[50%] left-[50%] max-h-[85vh] w-full max-w-[1000px] translate-x-[-50%] translate-y-[-50%] rounded-[32px] bg-skin-200 py-12 px-20 focus:outline-none z-10"
         style={{
           backgroundImage: 'url(./vector-13.png)',
           backgroundRepeat: 'no-repeat',

@@ -20,7 +20,7 @@ export default function ControlPanel(): JSX.Element {
   const handleRemoteClick = () => setSelectedType(SESSION_TYPE.REMOTE);
   return (
     // Wrapper
-    <div className="fixed w-full bottom-12 flex justify-center">
+    <div className="fixed w-full bottom-12 flex justify-center z-10">
       <div
         className={`${proximaNova.variable} font-proxima-nova rounded-3xl bg-salmon-300 mx-auto border border-purple-400 border-opacity-10 flex items-center px-6 py-3`}
         style={{ boxShadow: '-24px 28px 53px rgba(60, 40, 11, 0.08)' }}
