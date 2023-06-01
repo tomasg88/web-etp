@@ -97,8 +97,7 @@ export default function DownloadsPage({
               <Image
                 {...imageProps}
                 alt={activeDownload.name || ' '}
-                layout="responsive"
-                sizes="(max-width: 320px) 100vw, 480px"
+                width={400}
               />
             </div>
           </>
