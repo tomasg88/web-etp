@@ -7,6 +7,7 @@ import { useNextSanityImage } from 'next-sanity-image';
 import { getClient } from 'lib/sanity.server';
 import { crimsonPro, playfairDisplay, proximaNova } from 'utils/fonts';
 import { DownloadButton } from 'components/buttons/DownloadButton';
+import { Dots } from 'components/icons/backgrounds/Dots';
 
 const ACTIVE_BUTTON_CSS = 'bg-purple-400 text-white';
 const INACTIVE_BUTTON_CSS = 'bg-transparent text-purple-400';
@@ -23,6 +24,9 @@ export default function DownloadsPage({
   return (
     <section>
       <div className="bg-gray-100 flex flex-col items-center pt-20" id="hero">
+        <div className="absolute">
+          <Dots />
+        </div>
         <div
           className="relative w-full h-full flex items-center justify-center mt-20"
           id="dibujo"
