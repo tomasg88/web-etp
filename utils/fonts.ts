@@ -1,5 +1,5 @@
-import { Crimson_Pro, Playfair_Display } from '@next/font/google';
-import localFont from '@next/font/local';
+import { Crimson_Pro, Playfair_Display } from 'next/font/google';
+import localFont from 'next/font/local';
 
 export const billionReach = localFont({
   src: '../public/fonts/Billion-Reach.otf',
