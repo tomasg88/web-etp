@@ -1,3 +1,19 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "plugins": ["prettier", "no-relative-import-paths"],
+  "rules": {
+    "@next/next/no-img-element": "warn",
+    "no-unused-vars": "error",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "never" }
+    ],
+    "react/jsx-no-useless-fragment": "error",
+    "react/jsx-sort-props": "error",
+    "no-relative-import-paths/no-relative-import-paths": [
+      "error",
+      { "allowSameFolder": true }
+    ]
+  }
 }

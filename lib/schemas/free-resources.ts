@@ -25,7 +25,8 @@ export const freeResources = defineType({
       type: 'string',
     }),
     defineField({
-      description: 'Permite mostrar u ocultar el recurso en la página. Si está desactivado, el mismo no se mostrará',
+      description:
+        'Permite mostrar u ocultar el recurso en la página. Si está desactivado, el mismo no se mostrará',
       initialValue: false,
       name: 'active',
       title: 'Visible',

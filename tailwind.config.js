@@ -1,14 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './modules/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       animation: {
-        'spin-slow': 'spin 20s linear infinite',
-        'pulse-slow': 'pulse-completely 5s linear infinite',
+        overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
       colors: {
         gray: {
+          100: '#F8F8F8',
           800: '#2E3439',
         },
         gold: {
@@ -16,9 +21,6 @@ module.exports = {
           400: '#C8AC86',
           500: '#C9AD87',
           600: '#9B8054',
-        },
-        gray: {
-          100: '#F8F8F8',
         },
         orange: {
           400: '#F7966B',
@@ -37,21 +39,26 @@ module.exports = {
           400: '#FCD3C1',
         },
         skin: {
+          200: '#FFE6CB',
           400: '#FCD3C1',
         },
       },
-      fontFamily: {
-        montserrat: ['Montserrat'],
-        playfair: ['Playfair'],
-        'proxima-nova': ['"Proxima Nova"'],
-      },
       keyframes: {
-        'pulse-completely': {
-          '0%, 100%': { opacity: 1 },
-          '50%': { opacity: 0 },
+        overlayShow: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
         },
+        contentShow: {
+          from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
+          to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
+        },
+      },
+      fontFamily: {
+        'crimson-pro': ['var(--font-crimson-pro)'],
+        'playfair-display': ['var(--font-playfair-display)'],
+        'proxima-nova': ['var(--font-proxima-nova)'],
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

@@ -1,0 +1,21 @@
+# Files / Folders below will be skipped by prettier
+.git/
+.gitignore
+.prettierignore
+.eslintignore
+.editorconfig
+.vscode/
+.yarn/
+LICENSE
+
+build/
+coverage/
+
+*.png
+*.xml
+*.ico
+*.ejs
+
+*.min.js
+
+
